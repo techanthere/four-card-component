@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --red: hsl(0, 78%, 62%);
+  --cyan:hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --vdark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --vlight-blue: hsl(0, 0%, 98%);
+}
+body{
+  padding: 3rem;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+h1{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--vdark-blue);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.first-half{
+  font-size: 1.5rem;
+  display: block;
+  font-weight: 200;
+}
+header{
+  margin-bottom: 1rem;
+}
+header > p{
+  padding:0 5rem;
+  text-align: center;
+  font-weight: 400;
+}
+header > p, article > p{
+  color:var(--grayish-blue);
+}
+main{
+  display: grid;
+  padding:0 5rem;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas:
+  "supervisor"
+  "teambuilder"
+  "karma"
+  "calculator";
+}
+.supervisor-card{
+  border-color:var(--cyan);
+  grid-area: supervisor;
+  align-self: center;
+  justify-self:flex-end;
+}
+.teambuilder-card{
+  border-color: var(--red);
+  grid-area: teambuilder;
+  justify-self:center;
+}
+.karma-card{
+  border-color:var(--orange);
+  grid-area: karma;
+  justify-self:center;
+}
+.calculator-card{
+  border-color:var(--blue);
+  grid-area: calculator;
+  align-self: center;
+}
+article{
+  padding: 1.5rem 1.2rem;
+  margin: 1rem 1rem;
+  width: 18rem;
+  background-color: #fff;
+  display: grid;
+  border-radius: 5px;
+  border-top-width: 5px;
+  border-top-style: solid;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  box-shadow: 0px 8px 10px 2px var(--grayish-blue);
+}
+article > img{
+  width:3rem;
+  justify-self:flex-end;
+  height: auto;
+}
+h2{
+  line-height: 1;
+  font-size: 1rem;
+  color: var(--vdark-blue)
+}
+article > p{
+  font-size: 0.7rem;
+}
+@media(min-width:960px){
+  header p{
+    padding:0 15rem;
+  }
+  main{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "supervisor teambuilder calculator"
+    "supervisor  teambuilder calculator"
+    "supervisor karma calculator";
+  }
+}
